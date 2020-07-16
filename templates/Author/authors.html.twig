@@ -1,0 +1,15 @@
+{% extends '../base.html.twig' %}
+    {% block content %}
+        <main class="auteur">
+            {% for author in authors  %}
+                <div class="paragraphe">
+                    <h3>{{ author.firstName}}</h3>
+                    <p>{{ author.lastName }}</p>
+                    <p>{{ author.birthDate|date("m/d/Y") }}</p>
+                    <a href="{{ path('author_show',{id :author.id}) }}">
+                        <div class="button">Plus d'info </div> </a>
+                </div>
+            {% endfor %}
+
+        </main>
+    {% endblock %}

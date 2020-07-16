@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+
+    </head>
+    <header>
+
+        <a href="{{ path('book') }}">
+            <div class="button">Livres </div> </a>
+
+        <a href="{{ path('Authors') }}">
+            <div class="button">Auteurs </div> </a>
+    </header>
+    <body>
+        {% block content %}
+
+        {% endblock %}
+
+    <footer>
+            <p>Bibliothéque personnelle</p>
+            <p>Les incontournables</p>
+            <p>SFCorpo</p>
+    </footer>
+    </body>
+</html>

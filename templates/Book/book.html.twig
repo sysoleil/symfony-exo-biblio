@@ -1,0 +1,10 @@
+{% extends '../base.html.twig' %}
+{% block content %}
+    <main>
+        {% for book in books  %}
+            <p> <strong>{{ book.title }} </strong> </p> est un livre d'un genre {{ book.genre }}
+            il comporte {{ book.nbpages }} pages</p>
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}

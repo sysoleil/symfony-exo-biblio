@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+.auteur {
+    text-align: center;
+    font-style: normal;
+    font-size: 15px;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.content {
+    display: flex;
+}
+.button {
+    border: solid 3px blue;
+    border-radius: 5px;
+    border-bottom-width: 7px;
+}
+footer {
+    display: flex;
+    background-color: #5eb5e0;
+}
+.paragraphe {
+    width: 25%;
+    margin-right: 2%;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+}
+.book {
+    display: flex;
+}
+header {
+    display: flex;
+    font-size: large;
+    background-color: #5eb5e0;
+}
