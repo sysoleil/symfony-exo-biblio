@@ -4,6 +4,6 @@
         {% for book in books %}
             <h2>titre du livre : {{ book.title }}</h2>
             <p>genre : {{ book.genre }}</p>
-
+            <a href="{{ path ('Admin_Book_Delete',{ id: book.id}) }}">supprimer le livre</a>
         {% endfor %}
     {% endblock %}

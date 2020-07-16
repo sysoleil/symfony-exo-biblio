@@ -5,10 +5,7 @@ namespace App\Controller;
 
 
 use App\Repository\AuthorRepository;
-use App\Repository\BookRepository;
-use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AuthorController extends AbstractController

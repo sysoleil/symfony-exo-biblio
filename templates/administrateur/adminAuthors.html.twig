@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+    {% block content %}
+        {% for author in authors %}
+            <h2>nom de l'auteur : {{ author.firstname }}</h2>
+            <p>prénom de l'auteur  : {{ author.name }}</p>
+            <a href="{{ path ('Admin_Author_Delete',{ id: author.id}) }}">supprimer l'auteur</a>
+        {% endfor %}
+    {% endblock %}
