@@ -18,6 +18,12 @@
     border-radius: 5px;
     border-bottom-width: 7px;
 }
+.buttonAdmin {
+    border: solid 10px red;
+    border-radius: 5px;
+    border-bottom-width: 7px;
+    background-color: red;
+}
 footer {
     display: flex;
     background-color: #5eb5e0;
@@ -36,4 +42,20 @@ header {
     display: flex;
     font-size: large;
     background-color: #5eb5e0;
+    justify-content: center;
+}
+div.input_title{
+    font-size: 20px;
+    color: red;();
+}
+.book_form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+.authorFormBiography{
+    margin: 2% 0 2% 0;
+    justify-content: left;
 }

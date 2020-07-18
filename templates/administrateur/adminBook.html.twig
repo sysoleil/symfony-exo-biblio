@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'administrateur/Admin_base.html.twig' %}
 
     {% block content %}
-        {% for book in books %}
-            <h2>titre du livre : {{ book.title }}</h2>
-            <p>genre : {{ book.genre }}</p>
-            <a href="{{ path ('Admin_Book_Delete',{ id: book.id}) }}">supprimer le livre</a>
-        {% endfor %}
+            {% for book in books %}
+                <h2>titre du livre : {{ book.title }}</h2>
+                <p>genre : {{ book.genre }}</p>
+                <a href="{{ path ('admin_book_delete',{ id: book.id} ) }}">supprimer le livre</a>
+                <a href="{{ path ('admin_book_insert' ) }}">Créer un nouveau livre</a>
+                <a href="{{ path ('admin_book_update',{ id: book.id} ) }}">modifier un livre</a>
+            {% endfor %}
+
     {% endblock %}

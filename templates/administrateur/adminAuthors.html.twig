@@ -1,9 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'administrateur/Admin_base.html.twig' %}
 
     {% block content %}
         {% for author in authors %}
-            <h2>nom de l'auteur : {{ author.firstname }}</h2>
-            <p>prénom de l'auteur  : {{ author.name }}</p>
-            <a href="{{ path ('Admin_Author_Delete',{ id: author.id}) }}">supprimer l'auteur</a>
+            <h2>nom de l'auteur : {{ author.firstName }}</h2>
+            <p>prénom de l'auteur  : {{ author.lastName }}</p>
+            <a href="{{ path ('admin_author_delete',{id:author.id }) }}">supprimer l'auteur</a>
+            <a href="{{ path ('admin_author_insert') }}">Créer un auteur</a>
+            <a href="{{ path ('admin_author_update',{ id: author.id} ) }}">modifier un auteur</a>
+
         {% endfor %}
     {% endblock %}

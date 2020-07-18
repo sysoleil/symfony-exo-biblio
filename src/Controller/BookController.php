@@ -5,7 +5,6 @@ namespace App\Controller;
 
 
 use App\Entity\Book;
-use App\Repository\AuthorRepository;
 use App\Repository\BookRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use http\Env\Response;
@@ -100,9 +99,9 @@ class BookController extends AbstractController
          // puis je "valide" l'enregistrement avec la méthode flush()
      }
     /**
-     * @Route("/books_update", name="books_update")
+     * @Route("/books_insert", name="books_insert")
      */
-     public function books_update(BookRepository $bookRepository, EntityManagerInterface $entityManager)
+     public function books_insert(BookRepository $bookRepository, EntityManagerInterface $entityManager)
          //j'instancie la class bookrepository dans la variable $bookRepository ainsi que pour EntityManagerInterface
      {
          $book = $bookRepository ->find(2);

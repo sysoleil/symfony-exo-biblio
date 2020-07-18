@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\BookRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+// J'ajoute un alias au namespace
 
 /**
  * @ORM\Entity(repositoryClass=BookRepository::class)
@@ -19,11 +21,18 @@ class Book
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Vous devez indiquer un titre")
      */
     private $title;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Length(
+     *     min="0",
+     *     minMessage="La valeur doit être supérieure à 0",
+     *     max="4",
+     *     maxMessage="La valeur doit être infèrieure à 4"
+     * )
      */
     private $nbpages;
 
