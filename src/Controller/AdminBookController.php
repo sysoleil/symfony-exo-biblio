@@ -114,13 +114,15 @@ class AdminBookController extends AbstractController
          GenreRepository $genreRepository,
          EntityManagerInterface $entityManager)
      {
-
+         // je récupère un genre en bdd avec le genreRepository
+         // et la méthode find()
          $genre = $genreRepository->find(2);
          $book = new book();
 
          $book->setTitle("Le rouge et le noir");
          $book->setNbpages(387);
          $book->setResume("Jean Sorrel tombe amoureux de la femme d'\un autre");
+         // je créé la relation entre mon book et mon genre
          $book->setGenre($genre);
 
          return New Response('Votre livre a été créé');
