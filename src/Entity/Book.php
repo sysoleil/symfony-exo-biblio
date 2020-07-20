@@ -36,10 +36,6 @@ class Book
      */
     private $nbpages;
 
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $genre;
 
     // Je crée ma variable privée resume
     // Je crée ma route au dessus avec ses caractéristiques
@@ -48,6 +44,12 @@ class Book
      * @ORM\Column(type="text", nullable=true)
      */
     private $resume;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="books")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $genre;
 
     public function getId(): ?int
     {
@@ -94,15 +96,16 @@ class Book
         $this->resume = $resume;
     }
 
-    public function getGenre(): ?string
+    public function getGenre(): ?Genre
     {
         return $this->genre;
     }
 
-    public function setGenre(string $genre): self
+    public function setGenre(?Genre $genre): self
     {
         $this->genre = $genre;
 
         return $this;
     }
+
 }

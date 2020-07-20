@@ -4,11 +4,14 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use App\Entity\Genre;
 use App\Form\BookType;
 use App\Repository\BookRepository;
+use App\Repository\GenreRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminBookController extends AbstractController
@@ -102,4 +105,26 @@ class AdminBookController extends AbstractController
             'bookForm' => $bookForm->createView()
         ]);
     }
+
+    /**
+     * @Route("/admin/book_insert_genre", name="admin_book_insert_genre")
+     */
+
+     public function InsertBookWithGenre(
+         GenreRepository $genreRepository,
+         EntityManagerInterface $entityManager)
+     {
+
+         $genre = $genreRepository->find(2);
+         $book = new book();
+
+         $book->setTitle("Le rouge et le noir");
+         $book->setNbpages(387);
+         $book->setResume("Jean Sorrel tombe amoureux de la femme d'\un autre");
+         $book->setGenre($genre);
+
+         return New Response('Votre livre a été créé');
+     }
+
+
 }
